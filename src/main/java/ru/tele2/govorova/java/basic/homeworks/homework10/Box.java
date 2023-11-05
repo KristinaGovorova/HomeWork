@@ -1,8 +1,5 @@
 package ru.tele2.govorova.java.basic.homeworks.homework10;
 
-
-import java.util.Scanner;
-
 public class Box {
     private String color; //цвет
     final String size; // размер
