@@ -1,6 +1,8 @@
 package ru.tele2.govorova.java.basic.homeworks.homework10;
 
 
+import java.util.Scanner;
+
 public class Homework10 {
     public static void main(String[] args) {
 
@@ -49,48 +51,40 @@ public class Homework10 {
         Box Box2 = new Box("Красный", "10/10/40", Boolean.FALSE, "Кружки");
         Box Box3 = new Box("Красный", "10/10/40", Boolean.TRUE, null);
 
-        System.out.println(Box1);
-        System.out.println();
-        System.out.println();
+        System.out.println(Box1 + "\n\n");
 
         Box1.setColor("Розовый");
-        System.out.println("Мы поменяли цвет коробки: \n\n" + Box1);
+        System.out.println("Мы поменяли цвет коробки: \n\n" + Box1 + "\n\n");
 
-        System.out.println();
-        System.out.println();
+        Scanner scanner = new Scanner(System.in);
 
-        Box1.changeColor();
-        System.out.println(Box1);
+        System.out.println("Хотите открыть или закрыть коробку? \nВведите '1', если ходите открыть коробку, и '0' - закрыть");
+        int cmd = scanner.nextInt();
+        Box1.close(cmd);
+        System.out.println(Box1 + "\n\n");
 
-        System.out.println();
-        System.out.println();
+        System.out.println("Хотите открыть или закрыть коробку? \nВведите '1', если ходите открыть коробку, и '0' - закрыть");
+        int cmd1 = scanner.nextInt();
+        Box1.close(cmd1);
+        System.out.println(Box1 + "\n\n");
 
-        Box1.close();
-        System.out.println(Box1);
+        Box3.itemIn("Книга");
+        System.out.println(Box3 + "\n\n");
 
-        System.out.println();
-        System.out.println();
+        Box1.itemOut();
+        System.out.println(Box1 + "\n\n");
 
-        Box1.item();
-        System.out.println(Box1);
+        System.out.println("Хотите перекрасить коробку? \nВведите 'Да' или 'Нет'");
+        String answer = scanner.next();
 
-        System.out.println();
-        System.out.println();
+        if (answer.equals("Да")) {
+            System.out.println("Введите цвет");
+            String newColor = scanner.next();
+            Box2.changeColor(newColor);
+        } else {
+            System.out.println("Вы решили не перекрашивать коробку");
+        }
 
-        Box1.item();
-        System.out.println(Box1);
-
-        System.out.println();
-        System.out.println();
-
-        Box1.item2(null);
-        System.out.println(Box1);
+        System.out.println(Box2);
     }
 }
-
-
-
-
-
-
-

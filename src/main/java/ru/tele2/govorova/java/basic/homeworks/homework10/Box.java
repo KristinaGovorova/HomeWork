@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Box {
     private String color; //цвет
-    private String size; // размер
+    final String size; // размер
     private boolean open; //Открыта.закрыта
     private String item; //предмет
 
@@ -25,7 +25,7 @@ public class Box {
         return size;
     }
 
-    public boolean isStatus() {
+    public boolean isOpen() {
         return open;
     }
 
@@ -37,7 +37,7 @@ public class Box {
         this.color = color;
     }
 
-    public void setStatus(boolean open) {
+    public void setOpen(boolean open) {
         this.open = open;
     }
 
@@ -50,35 +50,23 @@ public class Box {
                 color, size, open, item);
     }
 
-    public void changeColor() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Хотите перекрасить коробку? \nВведите 'Да' или 'Нет'");
-        String answer = scanner.next();
+    public void changeColor(String newColor) {
 
-        if (answer.equals("Да")) {
-            System.out.println("Введите цвет");
-            String newColor = scanner.next();
-            this.color = newColor;
-            System.out.println("Вы изменили цвет коробки");
-        } else {
-            System.out.println("Вы решили не перекрашивать коробку");
-        }
+        this.color = newColor;
+        System.out.println("Вы изменили цвет коробки");
+
     }
 
-    public void close() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Хотите открыть или закрыть коробку? \nВведите '1', если ходите открыть коробку, и '0' - закрыть");
-        int cmd = scanner.nextInt();
+    public void close(int cmd) {
 
         if (cmd == 1) {
-            if (!isStatus()) {
+            if (!open) {
                 this.open = Boolean.TRUE;
             } else {
                 System.out.println("Вы пытаетесь открыть открытую коробку!");
             }
         } else {
-            if (isStatus()) {
+            if (open) {
                 this.open = Boolean.FALSE;
             } else {
                 System.out.println("Вы пытаетесь закрыть закрытую коробку!");
@@ -86,65 +74,30 @@ public class Box {
         }
     }
 
+    public void itemOut() {
 
-    public void item() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Хотите положить предмет в коробку или выкинуть его? \nВведите '1', если положить, и '0' - выкинуть");
-        int cmd = scanner.nextInt();
+        if (getItem() != null && open) {
+            this.item=null;
+            System.out.println("Вы очистили коробку!");
 
-        if (cmd == 1) {
-            if (getItem() == null && isStatus()) {
-                System.out.println("какой предмет вы хотите положить в коробку?");
-                String answer = scanner.next();
-                this.item = answer;
-            } else if (getItem() == null && !isStatus()) {
-                System.out.println("Вы патаетесь положить предмет в закрытую коробку!");
-            } else if (getItem() != null && !isStatus()) {
-                System.out.println("Вы патаетесь положить предмет в закрытую непустую коробку!");
-            } else {
-                System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
-            }
+        } else if (this.item == null || this.item != null && !open) {
+            System.out.println("Вы патаетесь очистить закрытую коробку!");
         } else {
-            if (getItem() != null && isStatus()) {
-                this.item = null;
-                System.out.println("Вы очистили коробку!");
-            } else if (getItem() == null || getItem() != null && !isStatus()) {
-                System.out.println("Вы патаетесь очистить закрытую коробку!");
-            } else {
-                System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
-            }
+            System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
         }
     }
 
-
-    //Без ввода с клавиатуры
-    public void item2(String answer) {
-        if (answer != null) {
-            if (getItem() == null && isStatus()) {
-
-                this.item = item;
-                ;
-            } else if (getItem() == null && !isStatus()) {
-                System.out.println("Вы патаетесь положить предмет в закрытую коробку!");
-            } else if (getItem() != null && !isStatus()) {
-                System.out.println("Вы патаетесь положить предмет в закрытую непустую коробку!");
-            } else {
-                System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
-            }
+    public void itemIn(String answer) {
+        if (this.item == null && open) {
+            this.item = answer;
+            System.out.println("Вы положили в коробку следующий предмет: " + answer);
+        } else if (this.item == null && !open) {
+            System.out.println("Вы патаетесь положить предмет в закрытую коробку!");
+        } else if (this.item != null && !open) {
+            System.out.println("Вы патаетесь положить предмет в закрытую непустую коробку!");
         } else {
-            if (getItem() != null && isStatus()) {
-                setItem(null);
-                System.out.println("Вы очистили коробку!");
-
-            } else if (getItem() == null || getItem() != null && !isStatus()) {
-                System.out.println("Вы патаетесь очистить закрытую коробку!");
-            } else {
-                System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
-            }
+            System.out.println("Вы пытаетесь положить предмет в заполненную коробку!");
         }
     }
+
 }
-
-
-
-
