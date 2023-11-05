@@ -58,13 +58,13 @@ public class Box {
 
         if (cmd == 1) {
             if (!open) {
-                this.open = Boolean.TRUE;
+                this.open = true;
             } else {
                 System.out.println("Вы пытаетесь открыть открытую коробку!");
             }
         } else {
             if (open) {
-                this.open = Boolean.FALSE;
+                this.open = false;
             } else {
                 System.out.println("Вы пытаетесь закрыть закрытую коробку!");
             }
