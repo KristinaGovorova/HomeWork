@@ -48,14 +48,12 @@ public class Box {
     }
 
     public void changeColor(String newColor) {
-
         this.color = newColor;
         System.out.println("Вы изменили цвет коробки");
 
     }
 
     public void close() {
-
 
         if (open) {
             this.open = false;
@@ -66,7 +64,6 @@ public class Box {
     }
 
     public void open() {
-
 
         if (!open) {
             this.open = true;
