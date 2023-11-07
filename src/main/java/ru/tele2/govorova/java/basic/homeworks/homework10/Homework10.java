@@ -58,15 +58,26 @@ public class Homework10 {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Хотите открыть или закрыть коробку? \nВведите '1', если ходите открыть коробку, и '0' - закрыть");
-        int cmd = scanner.nextInt();
-        Box1.close(cmd);
+
+        Box1.close();
         System.out.println(Box1 + "\n\n");
+
+
+        Box1.open();
+        System.out.println(Box1 + "\n\n");
+
 
         System.out.println("Хотите открыть или закрыть коробку? \nВведите '1', если ходите открыть коробку, и '0' - закрыть");
         int cmd1 = scanner.nextInt();
-        Box1.close(cmd1);
-        System.out.println(Box1 + "\n\n");
+
+        if (cmd1 == 1) {
+            Box2.open();
+        } else {
+            Box2.close();
+        }
+
+        System.out.println(Box2 + "\n\n");
+
 
         Box3.itemIn("Книга");
         System.out.println(Box3 + "\n\n");

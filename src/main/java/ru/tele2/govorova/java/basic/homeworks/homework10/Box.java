@@ -54,27 +54,32 @@ public class Box {
 
     }
 
-    public void close(int cmd) {
+    public void close() {
 
-        if (cmd == 1) {
-            if (!open) {
-                this.open = true;
-            } else {
-                System.out.println("Вы пытаетесь открыть открытую коробку!");
-            }
+
+        if (open) {
+            this.open = false;
+            System.out.println("Вы закрыли коробку!");
         } else {
-            if (open) {
-                this.open = false;
-            } else {
-                System.out.println("Вы пытаетесь закрыть закрытую коробку!");
-            }
+            System.out.println("Вы пытаетесь закрыть закрытую коробку!");
+        }
+    }
+
+    public void open() {
+
+
+        if (!open) {
+            this.open = true;
+            System.out.println("Вы открыли коробку!");
+        } else {
+            System.out.println("Вы пытаетесь открыть открытую коробку!");
         }
     }
 
     public void itemOut() {
 
         if (getItem() != null && open) {
-            this.item=null;
+            this.item = null;
             System.out.println("Вы очистили коробку!");
 
         } else if (this.item == null || this.item != null && !open) {
