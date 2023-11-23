@@ -4,8 +4,8 @@ public class Plate {
     private int food;
     private int foodMax;
 
-    public Plate(int food, int foodMax) {
-        this.food = food;
+    public Plate(int foodMax) {
+        this.food = foodMax;
         this.foodMax = foodMax;
     }
 
@@ -27,15 +27,14 @@ public class Plate {
         System.out.println("Сейчас в тарелке " + food);
     }
 
-    public void decreaseFood(int dec) {
+    public boolean decreaseFood(int dec) {
         food -= dec;
 
         if (food >= 0) {
-            System.out.println(true);
-
+            return true;
         } else {
             food = 0;
-            System.out.println(false);
+            return false;
         }
     }
 }

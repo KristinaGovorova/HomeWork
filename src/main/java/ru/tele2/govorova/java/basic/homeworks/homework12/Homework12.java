@@ -4,7 +4,7 @@ public class Homework12 {
     public static void main(String[] args) {
         Cat Cat1 = new Cat("Барсик", 10, false);
         Cat Cat2 = new Cat("Снежок", 80, false);
-        Plate Plate1 = new Plate(100, 100);
+        Plate Plate1 = new Plate(100);
         Cat[] Cats = {
                 new Cat("Мурзик", 13, false),
                 new Cat("Кокос", 19, false),
@@ -15,7 +15,7 @@ public class Homework12 {
                 new Cat("Гарфилд", 26, false),
                 new Cat("Том", 3, false),
                 new Cat("Черныш", 4, false),
-                new Cat("Беляш", 3, false),
+                new Cat("Беляш", 3, false)
         };
 
         Plate1.decreaseFood(101);
@@ -24,6 +24,7 @@ public class Homework12 {
 
         Cat1.eat(Plate1);
         Cat2.eat(Plate1);
+
         Plate1.additionFood(100);
 
         for (int i = 0; i < Cats.length; i++) {
