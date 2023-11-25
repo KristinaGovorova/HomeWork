@@ -14,20 +14,17 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        if (full == false && appetite <= plate.getFood()) {
-
-            plate.decreaseFood(appetite);
-            full = true;
-            System.out.println("В тарелке осталось " + plate.getFood() + "\n" + name + " поел\n");
+        if (full) {
+            System.out.println("Кот не голоден\n");
             return;
         }
-        if (full == false && appetite > plate.getFood()) {
+        if (appetite > plate.getFood()) {
             System.out.println("В тарелке недостаточно еды" + "\n" + name + " остался голоден\n");
             return;
         }
-        System.out.println("Кот не голоден\n");
-
+        plate.decreaseFood(appetite);
+        full = true;
+        System.out.println("В тарелке осталось " + plate.getFood() + "\n" + name + " поел\n");
     }
-
 
 }
