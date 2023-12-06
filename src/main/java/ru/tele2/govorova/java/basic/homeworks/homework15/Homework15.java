@@ -26,6 +26,7 @@ public class Homework15 {
         returnEmployeeOlderOrExactAge2(uselessPeople, 25);
         averageAge(uselessPeople, 25);
         younger(uselessPeople);
+        getYoungerEmployee(uselessPeople);
     }
 
 
@@ -45,6 +46,7 @@ public class Homework15 {
             if (s > 5) {
                 sum += s;
             }
+
         }
         System.out.println(sum);
     }

@@ -1,8 +1,6 @@
 package ru.tele2.govorova.java.basic.homeworks.homework15;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 public class Employee {
 
@@ -79,6 +77,17 @@ public class Employee {
             }
         }
         System.out.println(Arrays.asList(list));
+    }
+
+    public static void getYoungerEmployee(ArrayList<Employee> list) {
+        Collections.sort(list, new Comparator<Employee>() {
+
+            @Override
+            public int compare(Employee t, Employee t1) {
+                return t.getAge() - t1.getAge();
+            }
+        });
+        System.out.println(list.get(0));
     }
 
     @Override
