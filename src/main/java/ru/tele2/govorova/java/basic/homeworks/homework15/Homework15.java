@@ -3,23 +3,29 @@ package ru.tele2.govorova.java.basic.homeworks.homework15;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ru.tele2.govorova.java.basic.homeworks.homework15.Employee.returnEmployeeNameFromList;
-import static ru.tele2.govorova.java.basic.homeworks.homework15.Employee.returnEmployeeOlderOrExactAge;
+import static ru.tele2.govorova.java.basic.homeworks.homework15.Employee.*;
+
 
 public class Homework15 {
     public static void main(String[] args) {
-//        minMax(5, 30);
-//        sumOfMore5(new ArrayList<>(List.of(1, 5, 6, 3, 7)));
-//        notAnArray(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
-//        summarizeValues(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
+        minMax(5, 30);
+        sumOfMore5(new ArrayList<>(List.of(1, 5, 6, 3, 7)));
+        change(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
+        summarizeValues(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
+
+
         ArrayList<Employee> uselessPeople = new ArrayList<Employee>();
         uselessPeople.add(new Employee("Sergey", 24));
         uselessPeople.add(new Employee("Michail", 42));
         uselessPeople.add(new Employee("Evgeniy", 33));
         uselessPeople.add(new Employee("Olga", 33));
         uselessPeople.add(new Employee("Tatiana", 25));
+
         returnEmployeeNameFromList(uselessPeople);
         returnEmployeeOlderOrExactAge(uselessPeople, 25);
+        returnEmployeeOlderOrExactAge2(uselessPeople, 25);
+        averageAge(uselessPeople, 25);
+        younger(uselessPeople);
     }
 
 
@@ -39,12 +45,11 @@ public class Homework15 {
             if (s > 5) {
                 sum += s;
             }
-
         }
         System.out.println(sum);
     }
 
-    public static void notAnArray(ArrayList<Integer> list, int b) {
+    public static void change(ArrayList<Integer> list, int b) {
         for (int i = 0; i < list.size(); i++) {
             list.set(i, b);
         }
@@ -57,8 +62,6 @@ public class Homework15 {
         }
         System.out.println(list);
     }
-
-
 
 }
 
