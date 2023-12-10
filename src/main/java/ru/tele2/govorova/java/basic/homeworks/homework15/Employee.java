@@ -20,10 +20,13 @@ public class Employee {
         return age;
     }
 
-    public static void returnEmployeeNameFromList(ArrayList<Employee> list) {
+    public static ArrayList<String> returnEmployeeNameFromList(ArrayList<Employee> list) {
+        ArrayList<String> namesArray = new ArrayList<String>();
         for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getName());
+            namesArray.add(list.get(i).getName());
         }
+        System.out.println(namesArray);
+        return namesArray;
     }
 
     public static void returnEmployeeOlderOrExactAge(ArrayList<Employee> list, int minimalAge) {
@@ -54,7 +57,9 @@ public class Employee {
             age += list.get(i).getAge();
         }
         age = age / list.size();
-        if (age > averageAge) {
+        int b = 0;
+        b = age % list.size();
+        if (age > averageAge || (age == averageAge && b > 0)) {
             System.out.println("Средний возраст " + age + ", т.е. больше минимального");
             return true;
         }

@@ -1,17 +1,16 @@
 package ru.tele2.govorova.java.basic.homeworks.homework15;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static ru.tele2.govorova.java.basic.homeworks.homework15.Employee.*;
 
 
 public class Homework15 {
     public static void main(String[] args) {
-        minMax(5, 30);
-        sumOfMore5(new ArrayList<>(List.of(1, 5, 6, 3, 7)));
-        change(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
-        summarizeValues(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
+//        minMax(5, 30);
+//        sumOfMore5(new ArrayList<>(List.of(1, 5, 6, 3, 7)));
+//        change(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
+//        summarizeValues(new ArrayList<>(List.of(1, 5, 6, 3, 7)), 10);
 
 
         ArrayList<Employee> uselessPeople = new ArrayList<Employee>();
@@ -24,7 +23,7 @@ public class Homework15 {
         returnEmployeeNameFromList(uselessPeople);
         returnEmployeeOlderOrExactAge(uselessPeople, 25);
         returnEmployeeOlderOrExactAge2(uselessPeople, 25);
-        averageAge(uselessPeople, 25);
+        averageAge(uselessPeople, 31);
         younger(uselessPeople);
         getYoungerEmployee(uselessPeople);
     }
