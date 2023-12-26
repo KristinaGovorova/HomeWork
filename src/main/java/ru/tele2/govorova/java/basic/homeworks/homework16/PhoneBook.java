@@ -12,9 +12,15 @@ public class PhoneBook {
         }
     }
 
+
     public static void add(String fullName, String phone) {
-        phoneBook.put(phone, fullName);
+        if (phoneBook.containsKey(phone)) {
+            System.out.println("Запись с таким номером телефона уже есть");
+        } else
+            phoneBook.put(phone, fullName);
+        System.out.println("Запись добавлена");
     }
+
 
     public static String containsPhoneNumber(String number) {
         if (phoneBook.containsKey(number)) return "Абонент с таким номером найден";
@@ -29,10 +35,13 @@ public class PhoneBook {
                 result.add((String) entry.getKey());
             }
         }
-        if (result.size() == 0) {result.add("Абонент с такой фамилией не найден");}
+        if (result.size() == 0) {
+            result.add("Абонент с такой фамилией не найден");
+        }
 
         System.out.println(surname + " " + Arrays.toString(result.toArray(new String[0])));
 
     }
+
 }
 

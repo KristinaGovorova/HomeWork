@@ -9,6 +9,7 @@ public class Homework16 {
         PhoneBook phonebook = new PhoneBook();
 
         phonebook.add("Карпов Юрий Сергеевич", "71111111111");
+        phonebook.add("Карпов Юрий Сергеевич", "71111111111");
         phonebook.add("Карпов Юрий Сергеевич", "72222222222");
         phonebook.add("Поляков Артем Евгеньевич", "73333333333");
         phonebook.add("Антонов Михаил Павлович", "74444444444");
@@ -22,13 +23,14 @@ public class Homework16 {
         System.out.println(containsPhoneNumber("78888888888"));
         System.out.println(containsPhoneNumber("79879879988"));
 
+
         find("Карпов Юрий Сергеевич");
         find("Антонов Михаил Павлович");
         find("Поляков Артем Евгеньевич");
         find("Гапоненко Радомир Иванович");
 
-        phonebook.printPhonebook();
 
+        phonebook.printPhonebook();
 
     }
 }
