@@ -2,16 +2,18 @@ package ru.tele2.govorova.java.basic.homeworks.homework19;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Homework19 {
 
     public static void main(String[] args) throws IOException {
 
-        String path = "/Users/kristinagovorina/Documents/GitHub/HomeWork/src/main/java/ru/tele2/govorova/java/basic/homeworks/Homework19";
+        String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\ru\\tele2\\govorova\\java\\basic\\homeworks\\homework19";
         File dir = new File(path);
 
         if (dir.isDirectory())
+            System.out.println("Список файлов в директории: \n");
             for (File item : dir.listFiles()) {
                 {
                     if (item.isFile()) {
@@ -25,7 +27,7 @@ public class Homework19 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название файла, с которым хотите работать");
         String fileName = scanner.next().toString();
-        File file = new File(path + "/" + fileName);
+        File file = new File(path, fileName);
 
         file.createNewFile();
         try (InputStreamReader in = new InputStreamReader(new FileInputStream(path + "/" + fileName))) {
