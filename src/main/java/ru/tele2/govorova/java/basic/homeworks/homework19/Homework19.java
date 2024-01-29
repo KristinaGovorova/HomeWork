@@ -8,7 +8,7 @@ public class Homework19 {
 
     public static void main(String[] args) throws IOException {
 
-        String path = "/Users/kristinagovorina/Documents/GitHub/HomeWork/src/main/java/ru/tele2/govorova/java/basic/homeworks/Homework18";
+        String path = "/Users/kristinagovorina/Documents/GitHub/HomeWork/src/main/java/ru/tele2/govorova/java/basic/homeworks/Homework19";
         File dir = new File(path);
 
         if (dir.isDirectory())
