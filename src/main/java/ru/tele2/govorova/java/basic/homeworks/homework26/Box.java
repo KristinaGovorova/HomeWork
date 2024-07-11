@@ -38,6 +38,16 @@ public class Box<T extends Fruit> {
     }
 
     public void transfer(Box<? super T> box) {
+        if (box == null) {
+            System.out.println("Коробка, в которую вы хотите переложить фрукты, не существует");
+            return;
+        }
+        if (this.equals(box)) {
+            System.out.println("Нельзя переложить фрукты в ту же коробку");
+            return;
+        }
+
+
         box.items.addAll(this.items);
         clear();
     }

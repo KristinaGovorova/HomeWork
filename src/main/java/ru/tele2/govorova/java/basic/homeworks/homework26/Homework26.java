@@ -19,7 +19,7 @@ public class Homework26 {
         System.out.println(box1.compare(box2));
 
         Box<Orange> box3 = new Box<Orange>();
-        box2.transfer(box3);
+        box2.transfer(null);
         Box box4 = new Box<>(apple1, orange3);
         System.out.println(box4.compare(box1));
     }
