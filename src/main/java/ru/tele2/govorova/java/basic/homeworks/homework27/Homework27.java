@@ -23,7 +23,7 @@ public class Homework27 {
             return;
         }
 
-        System.out.println("Последовательность " + toSearch + " повторяется " + countRepetitionsSequence(fileName, toSearch) + " раз(а)");
+        System.out.println("Последовательность " + toSearch + " повторяется " + countRepetitionsSequence(new File(fileName), toSearch) + " раз(а)");
 
     }
 
@@ -45,7 +45,7 @@ public class Homework27 {
         return count;
     }
 }
-}
+
 
 
 
