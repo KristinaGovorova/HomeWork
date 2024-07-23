@@ -3,7 +3,7 @@ package ru.tele2.govorova.java.basic.homeworks.homework28;
 public class Homework28 {
 
 
-    char[] nextChar = {'A'};
+    private char nextChar = 'A';
 
     public void printCharA() {System.out.print('A');}
 
@@ -24,11 +24,11 @@ public class Homework28 {
         synchronized (mon) {
             try {
                 for (int i = 0; i < 5; i++) {
-                    while (nextChar[0] != 'A') {
+                    while (nextChar != 'A') {
                         mon.wait();
                     }
                     printCharA();
-                    nextChar[0] = 'B';
+                    nextChar = 'B';
                     mon.notifyAll();
 
                 }
@@ -42,11 +42,11 @@ public class Homework28 {
         synchronized (mon) {
             try {
                 for (int i = 0; i < 5; i++) {
-                    while (nextChar[0] != 'B') {
+                    while (nextChar != 'B') {
                         mon.wait();
                     }
                     printCharB();
-                    nextChar[0] = 'C';
+                    nextChar = 'C';
                     mon.notifyAll();
                 }
             } catch (InterruptedException e) {
@@ -59,11 +59,11 @@ public class Homework28 {
         synchronized (mon) {
             try {
                 for (int i = 0; i < 5; i++) {
-                    while (nextChar[0] != 'C') {
+                    while (nextChar != 'C') {
                         mon.wait();
                     }
                     printCharC();
-                    nextChar[0] = 'A';
+                    nextChar = 'A';
                     mon.notifyAll();
                 }
             } catch (InterruptedException e) {
